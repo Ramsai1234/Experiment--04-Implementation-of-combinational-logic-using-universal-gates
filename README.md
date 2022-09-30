@@ -29,15 +29,62 @@ F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 ## Logic Diagram
 ## Procedure
 ## Program:
-/*
+```
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-## RTL realization
+Developed by: P.Ramsai
+RegisterNumber:  212221240041
 
+program 1:
+
+USING NAND
+module comblogic(A,B,C,D,F);
+input A,B,C,D;
+output F;
+wire P,Q,R;
+assign P = (~C&~B&~A);
+assign Q = (~D&~C&~A);
+assign R = (C&~(~B)&~A);
+assign F= P&~Q&~R;
+endmodule
+program 2:
+
+USING NOR
+module comblogic(a,b,c,d,f);
+input a,b,c,d;
+output F;
+wire f1,f2,f3,f4;
+assign f1 = c&(~b)&a;
+assign f2 = d&(~c)&a;
+assign f3 = c&(~b)&a;
+assign f4 = ~(f1|f2|f3);
+not(F,f4);
+endmodule
+
+
+
+```
+## RTL realization
 ## Output:
-## RTL
-## Timing Diagram
+## RTL:
+## output1:
+![Screenshot (145)](https://user-images.githubusercontent.com/94269989/193262421-856a6280-e3e4-4580-9084-1d72a275c277.png)
+
+## Timing Diagram:
+![Screenshot (146)](https://user-images.githubusercontent.com/94269989/193263000-f2c4a7eb-ce14-41e1-8f78-ed9859365ac5.png)
+
+## truth table:
+![Screenshot (147)](https://user-images.githubusercontent.com/94269989/193263124-6717f4d3-b516-4494-8fdf-c13cfbae7018.png)
+
+## output2:
+![Screenshot (148)](https://user-images.githubusercontent.com/94269989/193263249-1cce16e0-9745-4935-aaae-bfe03615217a.png)
+
+## Timing diagram:
+
+![Screenshot (146)](https://user-images.githubusercontent.com/94269989/193263419-de4870f8-0034-4848-97e3-1826d043c6ba.png)
+
+## Truth table:
+![Screenshot (147)](https://user-images.githubusercontent.com/94269989/193263702-99db5f12-8469-43ee-a344-89ed8c17c66b.png)
+
+
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
